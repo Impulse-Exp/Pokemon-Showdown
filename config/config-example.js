@@ -10,6 +10,10 @@ exports.port = 8000;
 */
 exports.special = ['princesky'];
 
+exports.serverid = 'impulse';
+exports.servertoken = 'pggWVfqeqKon';
+
+
 /* serverIp used for custom avatars */
 exports.serverIp = "impulsereborn.herokuapp.com";
 
