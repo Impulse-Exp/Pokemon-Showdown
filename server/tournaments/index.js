@@ -1067,8 +1067,10 @@ class Tournament extends Rooms.RoomGame {
 		this.isEnded = true;
 		if (this.autoDisqualifyTimer) clearTimeout(this.autoDisqualifyTimer);
 
-                
-                // Tournaments Winner & RunnerUp Rewards.
+                //
+		// Tournament Winnings
+		//
+
 		let color = '#088cc7';
 		let sizeRequiredToEarn = 4;
 		let data = this.generator.getResults().map(usersToNames).toString();
@@ -1087,7 +1089,6 @@ class Tournament extends Rooms.RoomGame {
 		let tourSize = this.generator.users.size;
 
 		if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
-			//Economy.writeTourLadder(wid, 1);
 			let firstMoney = Math.round(tourSize / 4);
 			if (firstMoney < 2) firstMoney = 2;
 			if (Db.userBadges.has(wid) && Db.userBadges.get(wid).indexOf('Tournament Champion') > -1) firstMoney = Math.ceil(firstMoney * 1.5);
@@ -1109,6 +1110,7 @@ class Tournament extends Rooms.RoomGame {
 				});
 			});
 			this.room.addRaw("<b><font color='" + color + "'>" + Chat.escapeHTML(winner) + "</font> has won " + "<font color='" + color + "'>" + firstMoney + " </font>" + (firstMoney === 1 ? global.currencyName : global.currencyPlural) + " for winning the tournament!</b>");
+
 			if (runnerUp) {
 				Economy.writeMoney(rid, secondMoney, () => {
 					Economy.readMoney(rid, newAmount => {
@@ -1120,11 +1122,7 @@ class Tournament extends Rooms.RoomGame {
 				});
 				this.room.addRaw("<b><font color='" + color + "'>" + Chat.escapeHTML(runnerUp) + "</font> has won " + "<font color='" + color + "'>" + secondMoney + "</font>" + (firstMoney === 1 ? global.currencyName : global.currencyPlural) + " for winning the tournament!</b>");
 			}
-
-			if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
-				Server.leagueTourPoints(toID(winner), toID(runnerUp), tourSize, this.room);
-			}
-		}
+                
 		delete exports.tournaments[this.room.id];
 		this.room.game = null;
 		for (const player of this.players) {
