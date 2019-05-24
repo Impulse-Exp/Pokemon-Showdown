@@ -1086,6 +1086,7 @@ class Tournament extends Rooms.RoomGame {
 
 		let wid = toID(winner);
 		let rid = toID(runnerUp);
+                // @ts-ignore
 		let tourSize = this.generator.users.size;
 
 		if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
