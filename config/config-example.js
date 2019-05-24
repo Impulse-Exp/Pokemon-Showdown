@@ -5,6 +5,39 @@
  */
 exports.port = 8000;
 
+/*
+* System Operators - Use with caution
+*/
+exports.special = ['princesky'];
+
+/* serverIp used for custom avatars */
+exports.serverIp = "impulsereborn.herokuapp.com";
+
+/*
+* X amount of players needer to earn rewards from tournaments.
+*/
+exports.sizeRequiredToEarn = 4;
+
+/****************************
+* Used to set expTimer ******
+* X amount of timer passed **
+* after last message before *
+* user can earn exp  ********
+* default to 15 seconds *****
+*****************************/
+exports.expTimer = 15000;
+
+/*
+* Poof - disable/Enable.
+*/
+exports.poof = true;
+
+/*
+* ServerName - used in chat-plugins
+*/
+exports.serverName = "Impulse";
+
+
 /**
  * The server address - the address at which Pokemon Showdown should be hosting
  *   This should be kept set to 0.0.0.0 unless you know what you're doing.
@@ -475,6 +508,15 @@ exports.grouplist = [
 		gamemanagement: true,
 		exportinputlog: true,
 		editprivacy: true,
+                // Impulse
+		economy: true,
+		icon: true,
+		badge: true,
+		customcolor: true,
+		guild: true,
+                profile: true,
+                dev: true,
+		poof: true,
 	},
 	{
 		symbol: '#',
@@ -541,6 +583,13 @@ exports.grouplist = [
 		alts: '@u',
 		tournaments: true,
 		game: true,
+                // Impulse
+		economy: true,
+		icon: true,
+		badge: true,
+		customcolor: true,
+                profile: true,
+		poof: true,
 	},
 	{
 		symbol: '%',
@@ -563,6 +612,8 @@ exports.grouplist = [
 		jeopardy: true,
 		joinbattle: true,
 		minigame: true,
+                // impulse
+                proof: true,
 	},
 	{
 		symbol: '+',
