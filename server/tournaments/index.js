@@ -1082,8 +1082,8 @@ class Tournament extends Rooms.RoomGame {
 			winner = data;
 		}
 
-		let wid = toId(winner);
-		let rid = toId(runnerUp);
+		let wid = toID(winner);
+		let rid = toID(runnerUp);
 		let tourSize = this.generator.users.size;
 
 		if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
@@ -1122,7 +1122,7 @@ class Tournament extends Rooms.RoomGame {
 			}
 
 			if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
-				Server.leagueTourPoints(toId(winner), toId(runnerUp), tourSize, this.room);
+				Server.leagueTourPoints(toID(winner), toID(runnerUp), tourSize, this.room);
 			}
 		}
 		delete exports.tournaments[this.room.id];
