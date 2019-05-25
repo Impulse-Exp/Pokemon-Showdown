@@ -556,7 +556,7 @@ class CommandContext extends MessageContext {
 		}
 		/** @type {any} */
 		let message = this.message;
-                let giveExp = false;
+                let giveExp = true;
 
 		let commandHandler = this.splitCommand(message);
 
