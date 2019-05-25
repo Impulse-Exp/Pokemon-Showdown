@@ -1072,7 +1072,7 @@ class Tournament extends Rooms.RoomGame {
 		//
 
 		let color = '#088cc7';
-		let sizeRequiredToEarn = 4;
+		let sizeRequiredToEarn = 2;
 		let data = this.generator.getResults().map(usersToNames).toString();
 		let winner, runnerUp;
 
