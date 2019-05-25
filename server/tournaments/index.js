@@ -1086,8 +1086,10 @@ class Tournament extends Rooms.RoomGame {
 
 		let wid = toID(winner);
 		let rid = toID(runnerUp);
+                let size = size;
                 // @ts-ignore
-		let tourSize = this.generator.users.playerCount;
+		let tourSize = this.generator.users.size;
+
 
 		if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
 			let firstMoney = Math.round(tourSize / 4);
