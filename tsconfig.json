@@ -13,6 +13,7 @@
     "exclude": [
         "./.*-dist/**/*",
         "./server/index.js",
+        "./server/tournaments/*.js",
         "./server/chat-commands.js"
     ],
     "include": [
@@ -36,7 +37,6 @@
         "./server/chat-plugins/thing-of-the-day.js",
         "./server/chat-plugins/uno.js",
         "./server/chat-plugins/wifi.js",
-        "./server/tournaments/*.js",
         "./sim/**/*"
     ]
 }
